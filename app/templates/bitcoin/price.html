@@ -19,7 +19,7 @@
 var intervalID = setInterval(update_values,5000);
 
   function update_values() {
-        const api = 'http://127.0.0.1:5000/bitcoin/current_price'
+        const api = '/bitcoin/current_price'
         fetch(api).then(function(response){
           return response.json()
         }).then(function(data){
