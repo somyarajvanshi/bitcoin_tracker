@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bitcoin Price List</title>
+</head>
+<body>
+	<center><h1>Bitcoin PriceList</h1></center>
+	
+		<div class="conainer">
+			<table bordercolor="black" width="80%" cellpadding="10" cellspacing="10">
+				<tr>
+					<th>S.No</th>
+					<th>Price</th>
+					<th>Date</th>
+				</tr>
+				{% for item in pricelist %}
+				<tr>
+					<th>{{ item['id'] }}</th>
+					<th>{{ item['price'] }}</th>
+					<th>{{ item['datestamp'] }}</th>
+				</tr>
+				{% endfor %}
+			</table>
+		</div>
+		Page Number:{% for pages in range(1,page_num) %}
+      		<a class="btn mb-4" href="{{ url_for('bp.list', page=pages) }}">{{ pages }}</a>
+    	{% endfor %}  
+
+</body>
+</html>
