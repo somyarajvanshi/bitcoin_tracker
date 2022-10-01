@@ -55,3 +55,10 @@ class PriceList(MethodView):
 		list_count = list_count.get('list_count')/10
 		page_num = math.ceil(list_count)+1
 		return render_template('/bitcoin/pricelist.html',pricelist=pricelist,page_num=page_num)
+
+class Home(MethodView):
+	def get(self):
+		return render_template('/bitcoin/start.html')
+
+	def post(self):
+		return redirect(url_for('bp.price'))
